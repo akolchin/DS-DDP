@@ -1,32 +1,42 @@
-index
-========================================================
-author: akolchin
-date: 
-
-1 - First Slide
+Chicken weight prediction application
 ========================================================
 
-For more details on authoring R presentations click the
-**Help** button on the toolbar.
+  
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+About 
+========================================================
+Application uses the ChickWeight data set to fit regression model.
+Then you as user can use application to predict chicken weight.
 
-2 - Slide With Code
+
+ChickWeight Data Set
+========================================================
+Columns in dataset:
+```{r, echo=FALSE}
+data(ChickWeight)
+names(ChickWeight)
+```
+
+Some exploration of data:
+***
+```{r, echo=FALSE}
+coplot(weight ~ Time | as.factor(Diet), data = ChickWeight, panel = panel.smooth, rows = 1, )
+```
+
+Regression model
 ========================================================
 
 ```{r}
-summary(cars)
+fit <- lm(weight ~ Time + as.factor(Diet), data = ChickWeight)
 ```
 
-3- Slide With Plot
-========================================================
-
-```{r, echo=FALSE}
-plot(cars)
+```{r, echo=TRUE}
+coef(fit)
 ```
 
-4 - 
-========================================================
 
+Use application to predict chicken weight
+========================================================
+After app webpage is loaded, you can select the Diet and use the Day slider bar on the left hand side to input parameters. 
+
+Based on the fitted regression model, the app will predict chicken weight, given the diet and time.

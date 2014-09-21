@@ -1,41 +1,49 @@
-index
-========================================================
-author: akolchin
-date: 
-
-1 - First Slide
+Chicken weight prediction application
 ========================================================
 
-For more details on authoring R presentations click the
-**Help** button on the toolbar.
+  
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+About 
+========================================================
+Application uses the ChickWeight data set to fit regression model.
+Then you as user can use application to predict chicken weight.
 
-2 - Slide With Code
+
+ChickWeight Data Set
+========================================================
+Columns in dataset:
+
+```
+[1] "weight" "Time"   "Chick"  "Diet"  
+```
+
+Some exploration of data:
+***
+![plot of chunk unnamed-chunk-2](index-figure/unnamed-chunk-2.png) 
+
+Regression model
 ========================================================
 
 
 ```r
-summary(cars)
+fit <- lm(weight ~ Time + as.factor(Diet), data = ChickWeight)
+```
+
+
+```r
+coef(fit)
 ```
 
 ```
-     speed           dist    
- Min.   : 4.0   Min.   :  2  
- 1st Qu.:12.0   1st Qu.: 26  
- Median :15.0   Median : 36  
- Mean   :15.4   Mean   : 43  
- 3rd Qu.:19.0   3rd Qu.: 56  
- Max.   :25.0   Max.   :120  
+     (Intercept)             Time as.factor(Diet)2 as.factor(Diet)3 
+           10.92             8.75            16.17            36.50 
+as.factor(Diet)4 
+           30.23 
 ```
 
-3- Slide With Plot
+
+Use application to predict chicken weight
 ========================================================
+After app webpage is loaded, you can select the Diet and use the Day slider bar on the left hand side to input parameters. 
 
-![plot of chunk unnamed-chunk-2](index-figure/unnamed-chunk-2.png) 
-
-4 - 
-========================================================
-
+Based on the fitted regression model, the app will predict chicken weight, given the diet and time.

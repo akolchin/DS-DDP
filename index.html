@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>index</title>
+  <title>Chicken weight prediction application</title>
     
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -784,7 +784,7 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="linear" data-transition-speed="default">
-<h1>index</h1><p>akolchin</p>
+<h1>Chicken weight prediction application</h1><p></p>
 
 <div class="slideContent" >
 
@@ -792,49 +792,59 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
-<h3>1 - First Slide</h3>
+<h3>About </h3>
 <div class="slideContent" >
-<p>For more details on authoring R presentations click the
-<strong>Help</strong> button on the toolbar.</p>
-
-<ul>
-<li>Bullet 1</li>
-<li>Bullet 2</li>
-<li>Bullet 3</li>
-</ul>
+<p>Application uses the ChickWeight data set to fit regression model.
+Then you as user can use application to predict chicken weight.</p>
 
 </div>
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
-<h3>2 - Slide With Code</h3>
-<div class="slideContent" >
-<pre><code class="r">summary(cars)
+<h3>ChickWeight Data Set</h3>
+<div class="column column1 slideContent" >
+<p>Columns in dataset:</p>
+
+<pre><code>[1] &quot;weight&quot; &quot;Time&quot;   &quot;Chick&quot;  &quot;Diet&quot;  
 </code></pre>
 
-<pre><code>     speed           dist    
- Min.   : 4.0   Min.   :  2  
- 1st Qu.:12.0   1st Qu.: 26  
- Median :15.0   Median : 36  
- Mean   :15.4   Mean   : 43  
- 3rd Qu.:19.0   3rd Qu.: 56  
- Max.   :25.0   Max.   :120  
+<p>Some exploration of data:</p>
+
+
+</div>
+
+<div class="column column2 slideContent" >
+
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAAH4CAMAAACR9g9NAAAA2FBMVEX9/v0AAAAAADYAADkAAGEAAGUAOWUAOY8AYawAZrU2AAA2Yaw5AAA5ADk5AGU5OWU5OY85ZmU5j9phAGFhYaxhrPJlAABlADllAGVlOQBlOY9lZrVltf2INmGIYWGIYYiIz/KPOQCPOTmPOWWPZgCPj2WPtY+P27WP29qP2/2sYQCsYTasYWGs8vK1ZgC1Zjm1ZmW124+1/rW1/tq1/v3PiDbPz8/T09Pajzna24/a/rXa/tra/v3yrGHyz4jy8qzy8s/y8vL9tWX924/9/rX9/tr9/v3/AAD4h4AGAAAASHRSTlP/////////////////////////////////////////////////////////////////////////////////////////////AP8iyuCfAAAACXBIWXMAAAsSAAALEgHS3X78AAAaZklEQVR4nO2dCZ/mxlHGI8yymbA4ZiFjBw/gXc4hsA4wMK+DnWTnUH//b4T06uqjWupbatXz/HzM9LRUav3V1dWX9LMWYqmf7X0B0D4CeKYCeKYCeKYCeKYCeKYCeKYCeKYCeKYCeKYCeKYCeKY6Ffinpmlu2vb5ywevw14/NO/l3/XjL++f33Vnbu7kP3U/PX/1Y9Tl7qozgX9689BBfL+dUZMOWvu943tNebm90zJd/G0dRicC//qhB3PF9J9dXXz9eP9y23TPwvNX/3itrTPRvv7eXf3Dm/73LtcX92Na//O/9EeNh/7y128ePt2NB45PwMv895dv/FzLkXQi8HNFff7yvz/e95g+vW8vNx3n9+3T28Urv3x93+ftqXV/HQ4c0/pn5+ntD92JPl2PeX531/b5hlN3mZ6HP/Vn7ZM+3VEXUoXOBH5qcjsmnRO+vO9pdth6RLo375L7v875x7SxZg9Pxci5P+2Q3vmQ8RmZslbs688Evqf0rnfbfdz1f1dP3wy/auA/XZ38Ne904JA2PDv98V3SwPnqLOQaL50V4A+hoY0f6Lx+/OevfhybYB18H6SNvw8twJXm3cTbXuN73//lg3RWgD+GnvoK/DRUxkvfQxsbag389fe/uO+hz+DHtP7Z6ULDpY3vY7mpjZ8emOVPaOMPoj40f/MwkR3jdanGj/gvTfNnv76bHP5AfUy7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" alt="plot of chunk unnamed-chunk-2"/> </p>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Regression model</h3>
+<div class="slideContent" >
+<pre><code class="r">fit &lt;- lm(weight ~ Time + as.factor(Diet), data = ChickWeight)
+</code></pre>
+
+<pre><code class="r">coef(fit)
+</code></pre>
+
+<pre><code>     (Intercept)             Time as.factor(Diet)2 as.factor(Diet)3 
+           10.92             8.75            16.17            36.50 
+as.factor(Diet)4 
+           30.23 
 </code></pre>
 
 </div>
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
-<h3>3- Slide With Plot</h3>
-<div class="mediaOnly slideContent" >
-<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-2"/> </p>
-
-</div>
-
-</section>
-<section data-transition="linear" data-transition-speed="default">
-<h3>4 - </h3>
+<h3>Use application to predict chicken weight</h3>
 <div class="slideContent" >
+<p>After app webpage is loaded, you can select the Diet and use the Day slider bar on the left hand side to input parameters. </p>
+
+<p>Based on the fitted regression model, the app will predict chicken weight, given the diet and time.</p>
 
 </div>
 
